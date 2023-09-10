@@ -6,7 +6,7 @@ const [box,setBox]=useState([''])
 
 const handleChange = (value , index) =>{
   const newBox = box.map((boxItem,boxIndex) => {
-    return  boxIndex === index ? value : boxItem
+    boxIndex === index ? value : boxItem
   })
   setBox(newBox)
 }
@@ -18,9 +18,10 @@ const handleChange = (value , index) =>{
     Add   hobby:
   {
     box.map((item,index) => {
-      return<div>
-      <input  value={item}  
-        onChange={(e) => handleChange(e.target.value,index)}
+      <div>
+      <input 
+       value={item}  
+       onChange={(e) => handleChange(e.target.value,index)}
       />  
 
       {box.length > 0 &&<button 
